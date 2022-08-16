@@ -1,13 +1,19 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 // import ContactListItem from './ContactListItem';
+import { getContacts, deleteContact } from 'redux/contacts/contacts-operations';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
-import actions from '../../redux/contacts/contacts-actions';
 import styles from './ContactList.module.css';
 
 const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getContacts());
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <ul className={styles.list}>
@@ -26,7 +32,7 @@ const ContactList = () => {
           <button
             className={styles.btnDeleteContact}
             type="submit"
-            onClick={() => dispatch(actions.deleteContact(id))}
+            onClick={() => dispatch(deleteContact(id))}
           >
             Delete
           </button>
