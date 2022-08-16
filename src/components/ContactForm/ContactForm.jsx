@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import actions from '../../redux/contacts/contacts-actions';
+import { addContact } from 'redux/contacts/contacts-operations';
 import styles from './ContactForm.module.css';
 
 function ContactForm() {
@@ -26,7 +26,7 @@ function ContactForm() {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    dispatch(actions.addContact(name, number));
+    dispatch(addContact(name, number));
     resetForm();
   };
 
