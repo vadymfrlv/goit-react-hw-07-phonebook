@@ -9,7 +9,7 @@ const items = createReducer([], {
 });
 
 const filter = createReducer('', {
-  [changeFilter]: (state, { payload }) => payload,
+  [changeFilter]: (state, { payload }) => [...state, payload],
 });
 
 const isLoading = createReducer(false, {

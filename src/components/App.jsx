@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/contacts/contacts-selectors';
 import Section from './Section';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import Notification from './Notification';
+import { getContacts } from 'redux/contacts/contacts-selectors';
 import styles from './Filter/Filter.module.css';
 
 export default function App() {
