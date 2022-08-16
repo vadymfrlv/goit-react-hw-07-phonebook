@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://62fba869abd610251c0e8583.mockapi.io/';
+axios.defaults.baseURL = 'https://62fbdb66abd610251c12791e.mockapi.io';
 
 const getContacts = async () => {
   const response = await axios.get('/contacts');
@@ -13,7 +13,7 @@ const getContactById = async id => {
 };
 
 const addContact = async ({ name, number }) => {
-  const response = await axios.post('/contacts', { name, SVGAnimatedNumber });
+  const response = await axios.post('/contacts', { name, number });
   return response.data;
 };
 
