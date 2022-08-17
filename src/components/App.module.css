@@ -1,0 +1,10 @@
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+}

@@ -7,7 +7,7 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import Notification from './Notification';
-import styles from './Filter/Filter.module.css';
+import styles from './App.module.css';
 
 export default function App() {
   const contacts = useSelector(getContacts);
@@ -31,7 +31,7 @@ export default function App() {
       <Section title="Contacts">
         {contacts.length > 0 ? (
           <>
-            <div className={styles.filter}>All contacts: {contacts.length}</div>
+            <div className={styles.description}>All contacts: {contacts.length}</div>
             <Filter />
             <ContactList />
           </>

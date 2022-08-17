@@ -12,7 +12,7 @@ const filter = createReducer('', {
   [changeFilter]: (state, { payload }) => payload,
 });
 
-const isLoading = createReducer(false, {
+const loading = createReducer(false, {
   [getExistContacts.pending]: () => true,
   [getExistContacts.fulfilled]: () => false,
   [getExistContacts.rejected]: () => false,
@@ -34,4 +34,4 @@ const error = createReducer(null, {
       payload,
 });
 
-export const contactsReducer = combineReducers({ items, filter, isLoading, error });
+export const contactsReducer = combineReducers({ items, filter, loading, error });
