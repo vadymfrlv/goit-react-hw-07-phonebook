@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 // import ContactListItem from './ContactListItem';
-import { getContacts, deleteContact } from 'redux/contacts/contacts-operations';
+import { deleteContact } from 'redux/contacts/contacts-operations';
 import { getVisibleContacts } from 'redux/contacts/contacts-selectors';
 import styles from './ContactList.module.css';
 
@@ -10,13 +9,9 @@ const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getContacts());
-  }, [dispatch]);
-
   return (
     <ul className={styles.list}>
-      {contacts.map(({ id, name, number }) => (
+      {contacts.map(({ id, name, phone }) => (
         // <ContactListItem
         //   key={id}
         //   name={name}
@@ -26,7 +21,7 @@ const ContactList = () => {
         <li className={styles.item} key={id}>
           <p className={styles.contact}>
             {name}&emsp;
-            {number}
+            {phone}
           </p>
           <button
             className={styles.btnDeleteContact}
@@ -54,7 +49,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     })
   ),
 };
