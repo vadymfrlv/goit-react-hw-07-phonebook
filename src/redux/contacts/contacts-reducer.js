@@ -26,12 +26,17 @@ const loading = createReducer(false, {
   [deleteContact.rejected]: () => false,
 });
 
+const setError = (_, { playload }) => playload;
+
 const error = createReducer(null, {
+  [getExistContacts.rejected]: setError,
   [getExistContacts.pending]: () => null,
-  [getExistContacts.rejected]:
-    () =>
-    (_, { payload }) =>
-      payload,
+
+  [addContact.rejected]: setError,
+  [addContact.pending]: () => null,
+
+  [deleteContact.rejected]: setError,
+  [deleteContact.pending]: () => null,
 });
 
 export const contactsReducer = combineReducers({ items, filter, loading, error });
