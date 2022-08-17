@@ -18,12 +18,7 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <div
-      style={{
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-      }}
-    >
+    <div>
       <Section title="Phonebook">
         <ContactForm />
       </Section>
