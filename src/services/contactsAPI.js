@@ -12,8 +12,8 @@ const getContactById = async id => {
   return response.data;
 };
 
-const addContact = async ({ name, phone }) => {
-  const response = await axios.post('/contacts', { name, phone });
+const addContact = async ({ name, number }) => {
+  const response = await axios.post('/contacts', { name, number });
   return response.data;
 };
 

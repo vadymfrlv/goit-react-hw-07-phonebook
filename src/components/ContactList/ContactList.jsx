@@ -11,7 +11,7 @@ const ContactList = () => {
 
   return (
     <ul className={styles.list}>
-      {contacts.map(({ id, name, phone }) => (
+      {contacts.map(({ id, name, number }) => (
         // <ContactListItem
         //   key={id}
         //   name={name}
@@ -21,7 +21,7 @@ const ContactList = () => {
         <li className={styles.item} key={id}>
           <p className={styles.contact}>
             {name}&emsp;
-            {phone}
+            {number}
           </p>
           <button
             className={styles.btnDeleteContact}
@@ -49,7 +49,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };
